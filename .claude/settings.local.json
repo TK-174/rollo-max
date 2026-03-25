@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd.exe /c start \"D:\\\\AI_stuff\\\\Rollo-Max\\\\\")",
+      "Bash(npm install:*)",
+      "Bash(cmd.exe /c \"cd /d D:\\\\AI_stuff\\\\Rollo-Max && npm install\" 2>&1)",
+      "Bash(cmd.exe /c \"cd /d D:\\\\AI_stuff\\\\Rollo-Max && npm install 2>&1 && echo INSTALL_DONE\")",
+      "Bash(cmd.exe /c \"npm install --prefix D:\\\\\\\\AI_stuff\\\\\\\\Rollo-Max\")",
+      "Bash(cmd.exe /c \"npm install --prefix D:\\\\AI_stuff\\\\Rollo-Max > D:\\\\AI_stuff\\\\Rollo-Max\\\\npm_install.log 2>&1 && echo SUCCESS\")",
+      "Bash(cmd.exe /c \"type D:\\\\AI_stuff\\\\Rollo-Max\\\\npm_install.log\")",
+      "Bash(cmd.exe /c \"dir D:\\\\\\\\AI_stuff\\\\\\\\Rollo-Max\\\\\\\\node_modules /b 2>&1 | head -5\")",
+      "Bash(cmd.exe /c \"where npm\")",
+      "Bash(cmd.exe /c \"dir C:\\\\\\\\Program Files\\\\\\\\nodejs\\\\\\\\npm.cmd 2>&1\")",
+      "Bash(powershell.exe -Command \"Get-Command npm -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(powershell.exe -NoProfile -Command \"Get-Command npm | fl\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(powershell.exe -NoProfile -Command \"Get-ChildItem -Path 'C:\\\\', 'D:\\\\' -Filter 'npm.cmd' -Recurse -ErrorAction SilentlyContinue -Depth 5 | Select-Object -First 5 FullName\")",
+      "Bash(powershell.exe -NoProfile -Command \"ls C:\\\\Program Files\\\\nodejs\\\\\" 2>&1)",
+      "Bash(powershell.exe -NoProfile -Command \"Get-ChildItem 'C:\\\\Program Files\\\\nodejs' -ErrorAction SilentlyContinue\")",
+      "Bash(powershell.exe -NoProfile -Command \"Test-Path 'C:\\\\Program Files\\\\nodejs\\\\node.exe'\")",
+      "Bash(powershell.exe -NoProfile -Command \"Test-Path 'C:\\\\Users\\\\mochy\\\\AppData\\\\Roaming\\\\npm\\\\npm.cmd'; Test-Path 'C:\\\\nvm'; Test-Path 'C:\\\\Users\\\\mochy\\\\AppData\\\\Roaming\\\\nvm'\")",
+      "Bash(powershell.exe -NoProfile -Command \"Get-ChildItem -Path 'C:\\\\Users\\\\mochy' -Filter 'node.exe' -Recurse -Depth 5 -ErrorAction SilentlyContinue | Select-Object FullName\")",
+      "Bash(powershell.exe -NoProfile -Command \"Get-Command node -ErrorAction SilentlyContinue | Select-Object Source\")",
+      "Bash(powershell.exe -NoProfile -Command \"Get-ChildItem -Path 'C:\\\\Program Files\\\\nodejs', 'C:\\\\Program Files \\(x86\\)\\\\nodejs', $env:APPDATA\\\\npm -ErrorAction SilentlyContinue | Select-Object FullName\")",
+      "Bash(powershell.exe -NoProfile -Command \"Set-Location 'D:\\\\AI_stuff\\\\Rollo-Max'; & 'C:\\\\Program Files\\\\nodejs\\\\npm.cmd' install 2>&1\")",
+      "Bash(cmd.exe /c \"set PATH=C:\\\\Program Files\\\\nodejs;%PATH% && cd /d D:\\\\AI_stuff\\\\Rollo-Max && npm install\")",
+      "Bash(cmd.exe /c start \"Rollo-MAX Dev Server\" \"D:\\\\AI_stuff\\\\Rollo-Max\\\\run_dev.bat\")",
+      "Bash(cmd.exe /c \"D:\\\\AI_stuff\\\\Rollo-Max\\\\run_dev.bat\" 2>&1)",
+      "Bash(powershell.exe -NoProfile -Command \"Test-NetConnection -ComputerName localhost -Port 5173 -InformationLevel Quiet 2>$null\")",
+      "Bash(powershell.exe -NoProfile -Command \"\\(New-Object System.Net.Sockets.TcpClient\\).Connect\\('localhost', 5173\\); 'running'\" 2>&1)",
+      "Bash(cmd.exe /c start http://localhost:5174)",
+      "Bash(powershell.exe -NoProfile -Command \"Set-Location 'D:\\\\AI_stuff\\\\Rollo-Max'; git remote -v\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"\nSet-Location 'D:\\\\AI_stuff\\\\Rollo-Max'\ngit add .\ngit commit -m 'Initial commit: Rollo-MAX portfolio website'\n2>&1\n\")",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"\nSet-Location 'D:\\\\AI_stuff\\\\Rollo-Max'\ngit rm -r --cached node_modules dist 2>&1 | Out-Null\ngit add .\ngit commit -m 'Initial commit: Rollo-MAX portfolio website' 2>&1\n\")"
+    ]
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
+  }
+}
