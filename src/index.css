@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-zinc-950 text-zinc-100 antialiased;
+  }
+
+  *,
+  *::before,
+  *::after {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply font-serif text-4xl md:text-5xl text-zinc-100 leading-tight;
+  }
+
+  .gold-accent-line {
+    @apply w-16 h-0.5 bg-gold mt-4 mb-6;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-gold text-zinc-950
+           font-semibold text-sm tracking-wider uppercase rounded-sm
+           hover:bg-gold-light transition-colors duration-200 cursor-pointer;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3 border border-zinc-400
+           text-zinc-100 font-semibold text-sm tracking-wider uppercase rounded-sm
+           hover:border-gold hover:text-gold transition-colors duration-200 cursor-pointer;
+  }
+
+  .form-input {
+    @apply w-full bg-zinc-900 border border-zinc-700 rounded-sm px-4 py-3
+           text-zinc-100 placeholder-zinc-600
+           focus:outline-none focus:border-gold
+           transition-colors duration-200;
+  }
+}

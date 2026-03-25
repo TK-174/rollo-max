@@ -1,0 +1,28 @@
+You are an expert front-end engineer and an autonomous coding agent. Your task is to design, initialize, and build from scratch a fully functional, responsive portfolio website for "Rollo-MAX", which specializes in manufacturing window blinds and roller shutters.
+
+CONTEXT AND BUSINESS REQUIREMENTS:
+- Website type: Portfolio / showcase website only (strictly NO e-commerce, shopping cart, or payment gateways).
+- Language: The entire UI, metadata, and all generated copywriting MUST be in Polish.
+- Main goal: A visually appealing, premium presentation of products using photos and video materials.
+
+AUTONOMY & EXECUTION GUIDELINES:
+- Act autonomously: You do not need to ask for permission to create files, directories, or run safe build/install commands (e.g., npm init, npm install).
+- Use terminal commands to set up the project structure and install necessary dependencies automatically.
+
+STEP-BY-STEP TASKS:
+1. Architecture & Setup: Initialize a lightweight, modern tech stack (e.g., Vite + React + Tailwind CSS). Create the project directory, set up configuration files, and install dependencies.
+2. View Structure & Layout: Create a modern, minimalist layout that builds trust. Include:
+   - Header (Rollo-MAX logo, responsive navigation).
+   - Hero Section (A catchy headline in Polish, e.g., "Odkryj nowy wymiar cienia - nowoczesne rolety dla Twojego domu", with space for a background video).
+   - About Us (A short, compelling section building company credibility).
+   - Our Products / Portfolio (An advanced responsive grid or masonry gallery with category filters).
+   - Contact (A neat footer with a contact form, social links, and company details).
+3. Media Management (CRITICAL):
+   - Prepare the code so I can easily plug in my own media. Set up a clear `/public/assets` folder structure.
+   - For the initial build, use high-quality placeholder images (e.g., from Unsplash source or placeholder.com) relevant to the window blinds industry, so the prototype is immediately visual.
+   - Include clear comments indicating where local files should go (e.g., ``). Implement responsive video player logic.
+4. Copywriting & Quality:
+   - Generate professional, industry-tailored placeholder text in Polish.
+   - Ensure the code follows Clean Code principles, is fully responsive (mobile-first), and adheres to basic WCAG accessibility standards (semantic HTML, aria-labels).
+
+Start by briefly summarizing your execution plan and the file tree you will create, then immediately proceed to terminal execution and code generation.
