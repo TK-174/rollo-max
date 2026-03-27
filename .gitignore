@@ -3,3 +3,8 @@ dist
 .DS_Store
 *.local
 .claude
+
+# Dev/internal files
+prompt.txt
+run_dev.bat
+public/assets/README_REPLACE_MEDIA.txt
