@@ -59,7 +59,7 @@ export default function Hero() {
             {...fadeUp(0)}
             className="text-gold font-medium text-xs tracking-[0.4em] uppercase mb-6"
           >
-            Producent Rolet i Żaluzji — od 2009 roku
+            Producent Rolet Wewnętrznych — od 2018 roku
           </motion.p>
 
           <motion.h1
