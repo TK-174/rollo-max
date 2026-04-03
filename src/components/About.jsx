@@ -4,7 +4,6 @@ import { motion, useReducedMotion } from 'framer-motion'
 const stats = [
   { value: '15+', label: 'Lat doświadczenia' },
   { value: '5 000+', label: 'Zrealizowanych projektów' },
-  { value: '98%', label: 'Zadowolonych klientów' },
   { value: '24h', label: 'Czas realizacji wyceny' },
 ]
 
@@ -15,7 +14,7 @@ const features = [
   },
   {
     title: 'Materiały premium',
-    desc: 'Współpracujemy wyłącznie ze sprawdzonymi dostawcami tkanin i profili aluminiowych.',
+    desc: 'Współpracujemy wyłącznie ze sprawdzonymi dostawcami tkanin',
   },
   {
     title: 'Kompleksowy montaż',
@@ -63,14 +62,13 @@ export default function About() {
 
             <div className="space-y-4 text-zinc-400 leading-relaxed mb-10 text-[15px]">
               <p>
-                Firma Rollo-MAX powstała w 2009 roku z pasji do rzemiosła i estetyki.
+                Firma Rollo-MAX powstała w 2018 roku z pasji do rzemiosła i estetyki.
                 Od początku naszą misją jest dostarczanie produktów najwyższej jakości,
                 które nie tylko chronią przed słońcem, ale stanowią element dekoracyjny
                 każdego wnętrza i elewacji.
               </p>
               <p>
-                Specjalizujemy się w produkcji rolet zewnętrznych i wewnętrznych,
-                żaluzji aluminiowych i drewnianych, plisów oraz markiz. Każdy produkt
+                Specjalizujemy się w produkcji rolet wewnętrznych. Każdy produkt
                 wykonujemy na indywidualne zamówienie, dbając o precyzję i estetykę
                 wykonania.
               </p>

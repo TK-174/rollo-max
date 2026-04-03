@@ -1,17 +1,18 @@
 const footerLinks = [
   { href: '#hero', label: 'Start' },
   { href: '#produkty', label: 'Produkty' },
+  { href: '#realizacje', label: 'Realizacje' },
   { href: '#o-nas', label: 'O Nas' },
   { href: '#kontakt', label: 'Kontakt' },
 ]
 
 const productLinks = [
-  { href: '#produkty', label: 'Rolety Zewnętrzne' },
-  { href: '#produkty', label: 'Rolety Wewnętrzne' },
-  { href: '#produkty', label: 'Żaluzje Aluminiowe' },
-  { href: '#produkty', label: 'Żaluzje Drewniane' },
-  { href: '#produkty', label: 'Plisy' },
-  { href: '#produkty', label: 'Markizy' },
+  { href: '#produkty', label: 'Wewnętrzne Wolnowiszące' },
+  { href: '#produkty', label: 'System 1 – Rollo-Lux' },
+  { href: '#produkty', label: 'System 2 – Kaseta z prowadnicami' },
+  { href: '#produkty', label: 'System 3 – Kaseta z okleiną' },
+  { href: '#produkty', label: 'System 4 – Rura nawijająca' },
+  { href: '#produkty', label: 'Rolety Dzień-Noc' },
 ]
 
 export default function Footer() {
@@ -26,10 +27,12 @@ export default function Footer() {
 
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <a href="#" aria-label="Rollo-MAX – strona główna" className="inline-flex items-center gap-3 mb-5">
-              <span className="font-serif text-xl font-bold tracking-[0.2em] text-gold">ROLLO</span>
-              <span className="w-px h-5 bg-zinc-700" aria-hidden="true" />
-              <span className="font-serif text-xl font-bold tracking-[0.2em] text-zinc-100">MAX</span>
+            <a href="#" aria-label="Rollo-MAX – strona główna" className="inline-block mb-5">
+              <img
+                src="/assets/images/logo.png"
+                alt="Rollo-Max"
+                className="h-32 w-auto invert sepia"
+              />
             </a>
             <p className="text-zinc-500 text-sm leading-relaxed mb-6">
               Producent rolet i żaluzji na zamówienie. Jakość i styl dla Twojego domu od 2009 roku.
@@ -99,19 +102,18 @@ export default function Footer() {
           <div>
             <p className="text-zinc-400 text-[10px] uppercase tracking-widest mb-5">Kontakt</p>
             <address className="not-italic space-y-3 text-sm text-zinc-500">
-              {/* REPLACE: update with your actual address */}
-              <p>ul. Przemysłowa 14<br />00-000 Warszawa</p>
+              <p>ul. Szewska 2<br />64-100 Leszno</p>
               <p>
-                <a href="tel:+48000000000" className="hover:text-gold transition-colors">
-                  +48 000 000 000
+                <a href="tel:+48508164473" className="hover:text-gold transition-colors">
+                  +48 508 164 473
                 </a>
               </p>
               <p>
-                <a href="mailto:kontakt@rollo-max.pl" className="hover:text-gold transition-colors">
-                  kontakt@rollo-max.pl
+                <a href="mailto:rollo-max@wp.pl" className="hover:text-gold transition-colors">
+                  rollo-max@wp.pl
                 </a>
               </p>
-              <p className="text-zinc-600">Pon–Pt: 8:00–17:00</p>
+              <p className="text-zinc-600">Pon–Pt: 8:00–15:00</p>
             </address>
           </div>
         </div>

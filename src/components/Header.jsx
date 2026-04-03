@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 const navLinks = [
   { href: '#produkty', label: 'Produkty' },
+  { href: '#realizacje', label: 'Realizacje' },
   { href: '#o-nas', label: 'O Nas' },
   { href: '#kontakt', label: 'Kontakt' },
 ]
@@ -37,16 +38,14 @@ export default function Header() {
           {/* Logo */}
           <a
             href="#"
-            className="flex items-center gap-3 group"
+            className="group"
             aria-label="Rollo-MAX – strona główna"
           >
-            <span className="font-serif text-2xl font-bold tracking-[0.2em] text-gold transition-opacity group-hover:opacity-80">
-              ROLLO
-            </span>
-            <span className="w-px h-6 bg-zinc-600" aria-hidden="true" />
-            <span className="font-serif text-2xl font-bold tracking-[0.2em] text-zinc-100 transition-opacity group-hover:opacity-80">
-              MAX
-            </span>
+            <img
+              src="/assets/images/logo.png"
+              alt="Rollo-Max"
+              className="h-32 w-auto invert sepia transition-opacity duration-200 group-hover:opacity-75"
+            />
           </a>
 
           {/* Desktop Navigation */}

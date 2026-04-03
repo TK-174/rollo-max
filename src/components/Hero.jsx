@@ -59,7 +59,7 @@ export default function Hero() {
             {...fadeUp(0)}
             className="text-gold font-medium text-xs tracking-[0.4em] uppercase mb-6"
           >
-            Producent Rolet i Żaluzji — od 2009 roku
+            Producent Rolet  — od 2018 roku
           </motion.p>
 
           <motion.h1
@@ -77,8 +77,7 @@ export default function Hero() {
             {...fadeUp(0.2)}
             className="text-zinc-400 text-lg leading-relaxed mb-10 max-w-xl"
           >
-            Projektujemy i produkujemy rolety zewnętrzne i wewnętrzne, żaluzje
-            oraz markizy na zamówienie. Jakość premium, montaż na terenie całej Polski.
+            Projektujemy i produkujemy rolety wewnętrzne na zamówienie. Jakość premium.
           </motion.p>
 
           <motion.div
@@ -100,8 +99,7 @@ export default function Hero() {
           >
             {[
               '15+ lat doświadczenia',
-              '5 000+ projektów',
-              'Montaż w całej Polsce',
+              '5 000+ projektów'
             ].map((badge) => (
               <div key={badge} className="flex items-center gap-2 text-zinc-500 text-sm">
                 <span className="w-1 h-1 rounded-full bg-gold flex-shrink-0" aria-hidden="true" />

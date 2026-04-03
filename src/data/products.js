@@ -1,11 +1,15 @@
 export const types = [
   { id: 'all', label: 'Wszystkie' },
-  { id: 'wolnowiszace', label: 'Wolnowiszące' },
+  { id: 'wolnowiszace', label: 'Wewnętrzne Wolnowiszące' },
   { id: 'dzien-noc', label: 'Dzień-Noc' },
-  { id: 'blackout', label: 'Zaciemniające' },
-  { id: 'kasety', label: 'W Kasecie' },
-  { id: 'elektryczne', label: 'Elektryczne' },
+  { id: 'system1', label: 'System 1' },
+  { id: 'system2', label: 'System 2' },
+  { id: 'system3', label: 'System 3' },
+  { id: 'system4', label: 'System 4' },
 ]
+
+// Shared mounting description for non-invasive systems (1–3, Dzień-Noc)
+const MONTAZ_BEZINWAZYJNY = `Nasze rolety materiałowe montowane są w sposób całkowicie bezinwazyjny – nie wymagają wiercenia ani wkręcania w ramę okna. Rolety zawieszane są na specjalnych blaszkach nierdzewnych malowanych proszkowo, które dostępne są w różnych rozmiarach i kształtach wygięcia. Dzięki temu idealnie dopasujemy system montażu do każdego typu okna (PCV, drewniane czy aluminiowe). Montaż możliwy jest również na okna stałe - nieotwierane, dzięki prostym blaszkom. Wymagają one jednak wkręcenia w ramę okna dwóch samowiercących małych wkrętów. Jeśli okna posiadają jeszcze gwarancję producenta, roleta może zostać przyklejona bez ingerencji w ramę (bez wiercenia).`
 
 // ─────────────────────────────────────────────────────────────────────────────
 // MEDIA: Replace placeholder URLs with local files from /public/assets/
@@ -23,7 +27,7 @@ export const products = [
   {
     id: 1,
     type: 'wolnowiszace',
-    title: 'Rolety Wolnowiszące Tkaninowe',
+    title: 'Rolety Wewnętrzne Wolnowiszące',
     description: 'Klasyczne rolety tkaninowe w szerokiej gamie kolorów i faktur. Dostępne w tkaninach filtrujących, zaciemniających i transparentnych.',
     images: [
       'https://picsum.photos/seed/rw-ww-1/800/600',
@@ -31,69 +35,56 @@ export const products = [
       'https://picsum.photos/seed/rw-ww-3/800/600',
     ],
     video: PLACEHOLDER_VIDEO,
+    montaz: MONTAZ_BEZINWAZYJNY,
   },
   {
     id: 2,
-    type: 'wolnowiszace',
-    title: 'Rolety Wolnowiszące Mini',
-    description: 'Kompaktowe rolety do małych okien, idealne do łazienek i kuchni. Mechanizm bezuchwytowy, obsługa jednym palcem.',
-    images: [
-      'https://picsum.photos/seed/rw-mini-1/800/600',
-      'https://picsum.photos/seed/rw-mini-2/800/600',
-    ],
-    video: PLACEHOLDER_VIDEO,
-  },
-  {
-    id: 3,
-    type: 'dzien-noc',
-    title: 'Rolety Dzień-Noc Klasyczne',
-    description: 'Innowacyjne rolety łączące tkaninę przefiltrowaną i zaciemniającą. Regulacja światła bez utraty prywatności — w dzień i w nocy.',
-    images: [
-      'https://picsum.photos/seed/rw-dn-1/800/600',
-      'https://picsum.photos/seed/rw-dn-2/800/600',
-      'https://picsum.photos/seed/rw-dn-3/800/600',
-    ],
-    video: PLACEHOLDER_VIDEO,
-  },
-  {
-    id: 4,
-    type: 'dzien-noc',
-    title: 'Rolety Dzień-Noc Premium',
-    description: 'Wersja premium z węższymi pasami i bogatszą paletą tkanin. Elegancki wygląd i precyzyjna regulacja dozowania światła.',
+    type: 'system1',
+    title: 'System 1 – Rollo-Lux bez kasety (najprostsza wersja)',
+    description: 'Klasyczna, wolnowisząca roleta materiałowa zawieszana bezpośrednio na ramę okna. W zestawie znajdują się dwa przyklejane uchwyty dolne, które umożliwiają swobodne uchylanie okna. Opcjonalnie można dodać prowadnice.',
     images: [
       'https://picsum.photos/seed/rw-dnp-1/800/600',
       'https://picsum.photos/seed/rw-dnp-2/800/600',
     ],
     video: PLACEHOLDER_VIDEO,
+    montaz: MONTAZ_BEZINWAZYJNY,
   },
   {
-    id: 5,
-    type: 'blackout',
-    title: 'Rolety Zaciemniające Blackout',
-    description: 'Całkowite wyeliminowanie światła dziennego. Idealne do sypialni, pokoju dziecięcego i kina domowego.',
+    id: 3,
+    type: 'system2',
+    title: 'System 2 – Roleta w kasecie z prowadnicami bocznymi',
+    description: 'Roleta wewnętrzna w obudowie (kasecie) z bocznymi prowadnicami. Montaż bezinwazyjny, zawieszany bezpośrednio na ramę okna. Prowadnice stabilizują tkaninę, zapobiegają jej falowaniu i zapewniają estetyczny wygląd nawet przy uchylonym oknie.',
     images: [
       'https://picsum.photos/seed/rw-bo-1/800/600',
       'https://picsum.photos/seed/rw-bo-2/800/600',
       'https://picsum.photos/seed/rw-bo-3/800/600',
     ],
     video: PLACEHOLDER_VIDEO,
+    montaz: MONTAZ_BEZINWAZYJNY,
   },
   {
-    id: 6,
-    type: 'blackout',
-    title: 'Rolety Zaciemniające Silver',
-    description: 'Blackout z powłoką srebrną odbijającą ciepło. Doskonałe na lato — obniżają temperaturę w pomieszczeniu nawet o kilka stopni.',
+    id: 4,
+    type: 'system3',
+    title: 'System 3 – Roleta w kasecie z okleiną drewnopodobną',
+    description: 'Identyczna konstrukcja jak w Systemie 2, z tą różnicą, że kaseta jest wykończona okleiną drewnopodobną.',
     images: [
       'https://picsum.photos/seed/rw-bos-1/800/600',
       'https://picsum.photos/seed/rw-bos-2/800/600',
     ],
     video: PLACEHOLDER_VIDEO,
+    montaz: MONTAZ_BEZINWAZYJNY,
+    colors: [
+      { name: 'Złoty Dąb',    css: 'linear-gradient(135deg, #B8893A 0%, #D4A855 40%, #A87830 100%)' },
+      { name: 'Orzech',       css: 'linear-gradient(135deg, #4A2C14 0%, #6B3F24 40%, #3D2010 100%)' },
+      { name: 'Dąb Bagienny', css: 'linear-gradient(135deg, #1C1008 0%, #2E1A0F 40%, #140C06 100%)' },
+      { name: 'Antracyt',     css: '#383838' },
+    ],
   },
   {
-    id: 7,
-    type: 'kasety',
-    title: 'Rolety w Kasecie Otwartej',
-    description: 'Estetyczna kaseta aluminiowa ukrywająca mechanizm zwijający. Nadaje oknu schludny, nowoczesny wygląd.',
+    id: 5,
+    type: 'system4',
+    title: 'System 4 – Roleta na rurze nawijającej Ø25 mm',
+    description: 'Klasyczna roleta materiałowa montowana na solidnej rurze o średnicy 25 mm. Przeznaczona do montażu inwazyjnego (przykręcana) do ściany, sufitu, wnęki okiennej lub drewnianej belki. Idealna do szerszych okien i większych wnęk.',
     images: [
       'https://picsum.photos/seed/rw-ko-1/800/600',
       'https://picsum.photos/seed/rw-ko-2/800/600',
@@ -102,37 +93,23 @@ export const products = [
     video: PLACEHOLDER_VIDEO,
   },
   {
-    id: 8,
-    type: 'kasety',
-    title: 'Rolety w Kasecie Zamkniętej',
-    description: 'Kaseta z zamkniętą obudową — tkanina całkowicie schowana, brak kurzu i idealnie czysty wygląd nawet po latach użytkowania.',
+    id: 6,
+    type: 'dzien-noc',
+    title: 'Rolety Dzień-Noc',
+    description: 'Rolety Dzień i Noc to wyjątkowo dekoracyjne i funkcjonalne rozwiązanie, pozwalające płynnie regulować dopływ światła – od zaciemnienia po delikatne rozproszenie. Dostępne wyłącznie w wersji w kasecie z prowadnicami bocznymi.',
     images: [
-      'https://picsum.photos/seed/rw-kz-1/800/600',
-      'https://picsum.photos/seed/rw-kz-2/800/600',
+      'https://picsum.photos/seed/rw-dn-1/800/600',
+      'https://picsum.photos/seed/rw-dn-2/800/600',
+      'https://picsum.photos/seed/rw-dn-3/800/600',
     ],
     video: PLACEHOLDER_VIDEO,
-  },
-  {
-    id: 9,
-    type: 'elektryczne',
-    title: 'Rolety Elektryczne 230V',
-    description: 'Silnik 230V z pilotem i możliwością integracji z systemami smart home. Sterowanie grupowe, programowanie dobowe.',
-    images: [
-      'https://picsum.photos/seed/rw-el-1/800/600',
-      'https://picsum.photos/seed/rw-el-2/800/600',
-      'https://picsum.photos/seed/rw-el-3/800/600',
+    montaz: MONTAZ_BEZINWAZYJNY,
+    colors: [
+      { name: 'Biały',        css: '#F0EFE8' },
+      { name: 'Złoty Dąb',    css: 'linear-gradient(135deg, #B8893A 0%, #D4A855 40%, #A87830 100%)' },
+      { name: 'Orzech',       css: 'linear-gradient(135deg, #4A2C14 0%, #6B3F24 40%, #3D2010 100%)' },
+      { name: 'Dąb Bagienny', css: 'linear-gradient(135deg, #1C1008 0%, #2E1A0F 40%, #140C06 100%)' },
+      { name: 'Antracyt',     css: '#383838' },
     ],
-    video: PLACEHOLDER_VIDEO,
-  },
-  {
-    id: 10,
-    type: 'elektryczne',
-    title: 'Rolety Elektryczne Solar',
-    description: 'Zasilanie baterią solarną — bez konieczności prowadzenia kabli. Idealne do renowacji i miejsc bez dostępu do prądu.',
-    images: [
-      'https://picsum.photos/seed/rw-els-1/800/600',
-      'https://picsum.photos/seed/rw-els-2/800/600',
-    ],
-    video: PLACEHOLDER_VIDEO,
   },
 ]

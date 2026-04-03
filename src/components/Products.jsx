@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { types, products } from '../data/products'
+import PomiarMontaz from './PomiarMontaz'
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 
@@ -33,10 +34,39 @@ function IconChevronRight() {
   )
 }
 
+// ── Color Swatches ────────────────────────────────────────────────────────────
+
+function ColorSwatches({ colors }) {
+  if (!colors || colors.length === 0) return null
+  return (
+    <div className="mt-3">
+      <p className="text-zinc-600 text-[10px] uppercase tracking-widest mb-2">Dostępne kolory kasety</p>
+      <div className="flex flex-wrap gap-2">
+        {colors.map((color) => (
+          <div key={color.name} className="group/swatch relative">
+            <div
+              className="w-6 h-6 rounded-full border-2 border-zinc-700 shadow-sm cursor-default"
+              style={{ background: color.css }}
+              title={color.name}
+              aria-label={color.name}
+            />
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-zinc-800 text-zinc-200 text-[10px] whitespace-nowrap rounded-sm opacity-0 group-hover/swatch:opacity-100 transition-opacity pointer-events-none z-10 border border-zinc-700">
+              {color.name}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 // ── Media Modal ───────────────────────────────────────────────────────────────
 
 function MediaModal({ product, initialTab = 'photos', onClose }) {
   const [tab, setTab] = useState(initialTab)
+
+  // Sync tab if initialTab changes (defensive — guards against future refactors)
+  useEffect(() => { setTab(initialTab) }, [initialTab])
   const [photoIndex, setPhotoIndex] = useState(0)
   const videoRef = useRef(null)
   const modalRef = useRef(null)
@@ -110,46 +140,72 @@ function MediaModal({ product, initialTab = 'photos', onClose }) {
         className="relative z-10 w-full max-w-4xl bg-zinc-900 rounded-sm shadow-2xl shadow-black/60 overflow-hidden outline-none"
       >
         {/* Modal header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-zinc-800">
-          <div>
-            <span className="text-gold text-[10px] uppercase tracking-widest font-medium">
-              {types.find((t) => t.id === product.type)?.label}
-            </span>
-            <h3 className="font-serif text-lg text-zinc-100 leading-tight">{product.title}</h3>
-          </div>
-
-          {/* Tab switcher */}
-          <div className="flex items-center gap-1 bg-zinc-800 rounded-sm p-1 mr-10">
+        <div className="border-b border-zinc-800">
+          {/* Title row */}
+          <div className="flex items-start justify-between px-5 pt-4 pb-3">
+            <div>
+              <span className="text-gold text-[10px] uppercase tracking-widest font-medium">
+                {types.find((t) => t.id === product.type)?.label}
+              </span>
+              <h3 className="font-serif text-lg text-zinc-100 leading-tight">{product.title}</h3>
+            </div>
             <button
-              onClick={() => setTab('photos')}
-              className={`px-4 py-1.5 text-xs font-medium tracking-wider uppercase rounded-sm transition-all ${
-                tab === 'photos'
-                  ? 'bg-gold text-zinc-950'
-                  : 'text-zinc-400 hover:text-zinc-200'
-              }`}
+              onClick={onClose}
+              aria-label="Zamknij"
+              className="ml-4 flex-shrink-0 p-1.5 text-zinc-500 hover:text-zinc-200 transition-colors"
             >
-              Zdjęcia
-            </button>
-            <button
-              onClick={() => setTab('video')}
-              className={`px-4 py-1.5 text-xs font-medium tracking-wider uppercase rounded-sm transition-all flex items-center gap-1.5 ${
-                tab === 'video'
-                  ? 'bg-gold text-zinc-950'
-                  : 'text-zinc-400 hover:text-zinc-200'
-              }`}
-            >
-              <IconPlay />
-              Film
+              <IconClose />
             </button>
           </div>
 
-          <button
-            onClick={onClose}
-            aria-label="Zamknij"
-            className="absolute top-4 right-4 p-1.5 text-zinc-500 hover:text-zinc-200 transition-colors"
-          >
-            <IconClose />
-          </button>
+          {/* Tab switcher row */}
+          <div className="flex items-center gap-1 bg-zinc-800/60 px-4 pb-3">
+            <div
+              role="tablist"
+              aria-label="Widok produktu"
+              className="flex items-center gap-1 bg-zinc-800 rounded-sm p-1"
+            >
+              <button
+                role="tab"
+                aria-selected={tab === 'photos'}
+                onClick={() => setTab('photos')}
+                className={`px-3 py-1.5 text-xs font-medium tracking-wider uppercase rounded-sm transition-all ${
+                  tab === 'photos'
+                    ? 'bg-gold text-zinc-950'
+                    : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                Zdjęcia
+              </button>
+              <button
+                role="tab"
+                aria-selected={tab === 'video'}
+                onClick={() => setTab('video')}
+                className={`px-3 py-1.5 text-xs font-medium tracking-wider uppercase rounded-sm transition-all flex items-center gap-1 ${
+                  tab === 'video'
+                    ? 'bg-gold text-zinc-950'
+                    : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                <IconPlay />
+                Film
+              </button>
+              {product.montaz && (
+                <button
+                  role="tab"
+                  aria-selected={tab === 'montaz'}
+                  onClick={() => setTab('montaz')}
+                  className={`px-3 py-1.5 text-xs font-medium tracking-wider uppercase rounded-sm transition-all ${
+                    tab === 'montaz'
+                      ? 'bg-gold text-zinc-950'
+                      : 'text-zinc-400 hover:text-zinc-200'
+                  }`}
+                >
+                  Pomiar i montaż
+                </button>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Content */}
@@ -211,6 +267,7 @@ function MediaModal({ product, initialTab = 'photos', onClose }) {
                 src={product.video}
                 controls
                 autoPlay
+                muted
                 className="w-full h-full"
                 aria-label={`Film prezentacyjny: ${product.title}`}
               >
@@ -218,11 +275,16 @@ function MediaModal({ product, initialTab = 'photos', onClose }) {
               </video>
             </div>
           )}
+
+          {tab === 'montaz' && product.montaz && (
+            <PomiarMontaz text={product.montaz} />
+          )}
         </div>
 
         {/* Description footer */}
         <div className="px-5 py-4 border-t border-zinc-800">
           <p className="text-zinc-400 text-sm leading-relaxed">{product.description}</p>
+          <ColorSwatches colors={product.colors} />
         </div>
       </div>
     </div>
@@ -281,7 +343,8 @@ function ProductCard({ product, categoryLabel, onOpen, reduceMotion }) {
       {/* Card body */}
       <div className="flex flex-col flex-1 p-5">
         <h3 className="font-serif text-lg text-zinc-100 leading-snug mb-2">{product.title}</h3>
-        <p className="text-zinc-500 text-sm leading-relaxed flex-1 line-clamp-2">{product.description}</p>
+        <p className="text-zinc-500 text-sm leading-relaxed line-clamp-2">{product.description}</p>
+        <ColorSwatches colors={product.colors} />
 
         {/* Action buttons */}
         <div className="flex gap-2 mt-4 pt-4 border-t border-zinc-800">
@@ -350,10 +413,16 @@ export default function Products() {
             Nasze Produkty
           </h2>
           <div className="gold-accent-line mx-auto" aria-hidden="true" />
-          <p className="text-zinc-400 max-w-lg mx-auto text-[15px] leading-relaxed">
-            Oferujemy szeroki wybór rolet wewnętrznych — każdy produkt szyjemy na zamówienie.
-            Przeglądaj zdjęcia i filmy prezentacyjne, aby wybrać idealne rozwiązanie dla swojego wnętrza.
-          </p>
+          <div className="max-w-lg mx-auto">
+            <p className="text-zinc-400 text-[15px] leading-relaxed mb-4">
+              Oferujemy szeroki wybór rolet wewnętrznych — każdy produkt szyjemy na zamówienie.
+              Przeglądaj zdjęcia i filmy prezentacyjne, aby wybrać idealne rozwiązanie dla swojego wnętrza.
+            </p>
+            <p className="text-zinc-500 text-[13px] leading-relaxed">
+              <span className="text-gold font-medium">Trwałe mechanizmy z poliamidu — </span>
+              Wszystkie mechanizmy naszych rolet wykonujemy z wysokiej jakości poliamidu (nylonu). Materiał ten charakteryzuje się wyjątkową odpornością na ścieranie, zużycie mechaniczne i długotrwałe użytkowanie, co gwarantuje cichą, płynną pracę rolety przez wiele lat.
+            </p>
+          </div>
         </div>
 
         {/* Category filter */}
