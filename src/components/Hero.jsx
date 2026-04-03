@@ -1,16 +1,18 @@
+import { useCallback } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 
 export default function Hero() {
   const reduceMotion = useReducedMotion()
 
-  const fadeUp = (delay = 0) =>
+  const fadeUp = useCallback((delay = 0) =>
     reduceMotion
       ? {}
       : {
           initial: { opacity: 0, y: 30 },
           animate: { opacity: 1, y: 0 },
           transition: { duration: 0.7, delay, ease: 'easeOut' },
-        }
+        },
+  [reduceMotion])
 
   return (
     <section

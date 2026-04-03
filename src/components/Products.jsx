@@ -61,9 +61,29 @@ function MediaModal({ product, initialTab = 'photos', onClose }) {
     return () => { document.body.style.overflow = '' }
   }, [])
 
-  // Focus trap
+  // Focus trap — keep Tab cycling within the modal
   useEffect(() => {
-    modalRef.current?.focus()
+    const modal = modalRef.current
+    if (!modal) return
+
+    modal.focus()
+
+    const onTab = (e) => {
+      if (e.key !== 'Tab') return
+      const focusable = modal.querySelectorAll(
+        'button:not([tabindex="-1"]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus() }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus() }
+      }
+    }
+
+    modal.addEventListener('keydown', onTab)
+    return () => modal.removeEventListener('keydown', onTab)
   }, [])
 
   const prevPhoto = () => setPhotoIndex((i) => (i - 1 + product.images.length) % product.images.length)
@@ -165,12 +185,13 @@ function MediaModal({ product, initialTab = 'photos', onClose }) {
                     <IconChevronRight />
                   </button>
 
-                  {/* Dot indicators */}
+                  {/* Dot indicators — decorative; prev/next arrows cover keyboard navigation */}
                   <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5" aria-hidden="true">
                     {product.images.map((_, i) => (
                       <button
                         key={i}
                         onClick={() => setPhotoIndex(i)}
+                        tabIndex={-1}
                         className={`w-1.5 h-1.5 rounded-full transition-all ${
                           i === photoIndex ? 'bg-gold w-4' : 'bg-zinc-500 hover:bg-zinc-300'
                         }`}

@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 
 const stats = [
@@ -25,7 +26,7 @@ const features = [
 export default function About() {
   const reduceMotion = useReducedMotion()
 
-  const animProps = (dir = 'left', delay = 0) =>
+  const animProps = useCallback((dir = 'left', delay = 0) =>
     reduceMotion
       ? {}
       : {
@@ -33,7 +34,8 @@ export default function About() {
           whileInView: { opacity: 1, x: 0 },
           viewport: { once: true, margin: '-80px' },
           transition: { duration: 0.7, delay, ease: 'easeOut' },
-        }
+        },
+  [reduceMotion])
 
   return (
     <section

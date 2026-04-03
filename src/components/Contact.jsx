@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { motion, useReducedMotion } from 'framer-motion'
 
@@ -75,7 +75,7 @@ export default function Contact() {
     formState: { errors },
   } = useForm({ mode: 'onTouched' })
 
-  const onSubmit = async () => {
+  const onSubmit = async (data) => { // eslint-disable-line no-unused-vars
     setSubmitting(true)
     // REPLACE: integrate with your email service (e.g. EmailJS, Resend, FormSubmit)
     await new Promise((r) => setTimeout(r, 1500))
@@ -84,7 +84,7 @@ export default function Contact() {
     reset()
   }
 
-  const slideProps = (dir, delay = 0) =>
+  const slideProps = useCallback((dir, delay = 0) =>
     reduceMotion
       ? {}
       : {
@@ -92,7 +92,8 @@ export default function Contact() {
           whileInView: { opacity: 1, x: 0 },
           viewport: { once: true, margin: '-60px' },
           transition: { duration: 0.6, delay, ease: 'easeOut' },
-        }
+        },
+  [reduceMotion])
 
   return (
     <section
