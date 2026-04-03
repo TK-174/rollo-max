@@ -5,9 +5,9 @@ import PomiarMontaz from './PomiarMontaz'
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 
-function IconPlay() {
+function IconPlay({ className = 'w-6 h-6' }) {
   return (
-    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M8 5.14v14l11-7-11-7z" />
     </svg>
   )
@@ -363,7 +363,7 @@ function ProductCard({ product, categoryLabel, onOpen, reduceMotion }) {
             aria-label={`Odtwórz film: ${product.title}`}
             className="flex-1 flex items-center justify-center gap-1.5 py-2 bg-gold/10 hover:bg-gold text-gold hover:text-zinc-950 text-xs tracking-wider uppercase font-medium rounded-sm transition-all border border-gold/30 hover:border-gold"
           >
-            <IconPlay />
+            <IconPlay className="w-3.5 h-3.5" />
             Film
           </button>
         </div>

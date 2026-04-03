@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 const navLinks = [
   { href: '#produkty', label: 'Produkty' },
+  { href: '#montaz', label: 'Montaż' },
   { href: '#realizacje', label: 'Realizacje' },
   { href: '#o-nas', label: 'O Nas' },
   { href: '#kontakt', label: 'Kontakt' },
@@ -42,7 +43,7 @@ export default function Header() {
             aria-label="Rollo-MAX – strona główna"
           >
             <img
-              src="/assets/images/logo.png"
+              src={`${import.meta.env.BASE_URL}assets/images/logo.png`}
               alt="Rollo-Max"
               className="h-32 w-auto invert sepia transition-opacity duration-200 group-hover:opacity-75"
             />

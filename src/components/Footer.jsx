@@ -29,13 +29,13 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <a href="#" aria-label="Rollo-MAX – strona główna" className="inline-block mb-5">
               <img
-                src="/assets/images/logo.png"
+                src={`${import.meta.env.BASE_URL}assets/images/logo.png`}
                 alt="Rollo-Max"
                 className="h-32 w-auto invert sepia"
               />
             </a>
             <p className="text-zinc-500 text-sm leading-relaxed mb-6">
-              Producent rolet i żaluzji na zamówienie. Jakość i styl dla Twojego domu od 2009 roku.
+              Producent rolet wewnętrznych na zamówienie. Jakość i styl dla Twojego domu od 2018 roku.
             </p>
             {/* REPLACE: update social links */}
             <div className="flex gap-3">

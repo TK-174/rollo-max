@@ -9,7 +9,7 @@ export const types = [
 ]
 
 // Shared mounting description for non-invasive systems (1–3, Dzień-Noc)
-const MONTAZ_BEZINWAZYJNY = `Nasze rolety materiałowe montowane są w sposób całkowicie bezinwazyjny – nie wymagają wiercenia ani wkręcania w ramę okna. Rolety zawieszane są na specjalnych blaszkach nierdzewnych malowanych proszkowo, które dostępne są w różnych rozmiarach i kształtach wygięcia. Dzięki temu idealnie dopasujemy system montażu do każdego typu okna (PCV, drewniane czy aluminiowe). Montaż możliwy jest również na okna stałe - nieotwierane, dzięki prostym blaszkom. Wymagają one jednak wkręcenia w ramę okna dwóch samowiercących małych wkrętów. Jeśli okna posiadają jeszcze gwarancję producenta, roleta może zostać przyklejona bez ingerencji w ramę (bez wiercenia).`
+export const MONTAZ_BEZINWAZYJNY = `Nasze rolety materiałowe montowane są w sposób całkowicie bezinwazyjny – nie wymagają wiercenia ani wkręcania w ramę okna. Rolety zawieszane są na specjalnych blaszkach nierdzewnych malowanych proszkowo, które dostępne są w różnych rozmiarach i kształtach wygięcia. Dzięki temu idealnie dopasujemy system montażu do każdego typu okna (PCV, drewniane czy aluminiowe). Montaż możliwy jest również na okna stałe - nieotwierane, dzięki prostym blaszkom. Wymagają one jednak wkręcenia w ramę okna dwóch samowiercących małych wkrętów. Jeśli okna posiadają jeszcze gwarancję producenta, roleta może zostać przyklejona bez ingerencji w ramę (bez wiercenia).`
 
 // ─────────────────────────────────────────────────────────────────────────────
 // MEDIA: Replace placeholder URLs with local files from /public/assets/
