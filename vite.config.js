@@ -5,3 +5,5 @@ export default defineConfig({
   plugins: [react()],
   base: '/rollo-max/',
 })
+
+
