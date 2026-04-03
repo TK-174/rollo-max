@@ -344,10 +344,10 @@ function ProductCard({ product, categoryLabel, onOpen, reduceMotion }) {
       <div className="flex flex-col flex-1 p-5">
         <h3 className="font-serif text-lg text-zinc-100 leading-snug mb-2">{product.title}</h3>
         <p className="text-zinc-500 text-sm leading-relaxed line-clamp-2">{product.description}</p>
-        <ColorSwatches colors={product.colors} />
-
-        {/* Action buttons */}
-        <div className="flex gap-2 mt-4 pt-4 border-t border-zinc-800">
+        {/* Swatches + buttons pinned to card bottom */}
+        <div className="mt-auto">
+          <ColorSwatches colors={product.colors} />
+          <div className="flex gap-2 mt-3 pt-4 border-t border-zinc-800">
           <button
             onClick={() => onOpen(product, 'photos')}
             aria-label={`Otwórz galerię zdjęć: ${product.title}`}
@@ -366,6 +366,7 @@ function ProductCard({ product, categoryLabel, onOpen, reduceMotion }) {
             <IconPlay className="w-3.5 h-3.5" />
             Film
           </button>
+          </div>
         </div>
       </div>
     </motion.article>
