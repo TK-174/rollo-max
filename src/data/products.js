@@ -7,10 +7,6 @@ export const types = [
   { id: 'system3', label: 'System 3' },
   { id: 'system4', label: 'System 4' },
 ]
-
-// Shared mounting description for non-invasive systems (1–3, Dzień-Noc)
-export const MONTAZ_BEZINWAZYJNY = `Nasze rolety materiałowe montowane są w sposób całkowicie bezinwazyjny – nie wymagają wiercenia ani wkręcania w ramę okna. Rolety zawieszane są na specjalnych blaszkach nierdzewnych malowanych proszkowo, które dostępne są w różnych rozmiarach i kształtach wygięcia. Dzięki temu idealnie dopasujemy system montażu do każdego typu okna (PCV, drewniane czy aluminiowe). Montaż możliwy jest również na okna stałe - nieotwierane, dzięki prostym blaszkom. Wymagają one jednak wkręcenia w ramę okna dwóch samowiercących małych wkrętów. Jeśli okna posiadają jeszcze gwarancję producenta, roleta może zostać przyklejona bez ingerencji w ramę (bez wiercenia).`
-
 // ─────────────────────────────────────────────────────────────────────────────
 // MEDIA: Replace placeholder URLs with local files from /public/assets/
 //
@@ -35,7 +31,7 @@ export const products = [
       'https://picsum.photos/seed/rw-ww-3/800/600',
     ],
     video: PLACEHOLDER_VIDEO,
-    montaz: MONTAZ_BEZINWAZYJNY,
+  
   },
   {
     id: 2,
@@ -47,7 +43,6 @@ export const products = [
       'https://picsum.photos/seed/rw-dnp-2/800/600',
     ],
     video: PLACEHOLDER_VIDEO,
-    montaz: MONTAZ_BEZINWAZYJNY,
   },
   {
     id: 3,
@@ -60,7 +55,6 @@ export const products = [
       'https://picsum.photos/seed/rw-bo-3/800/600',
     ],
     video: PLACEHOLDER_VIDEO,
-    montaz: MONTAZ_BEZINWAZYJNY,
   },
   {
     id: 4,
@@ -72,7 +66,6 @@ export const products = [
       'https://picsum.photos/seed/rw-bos-2/800/600',
     ],
     video: PLACEHOLDER_VIDEO,
-    montaz: MONTAZ_BEZINWAZYJNY,
     colors: [
       { name: 'Złoty Dąb',    css: 'linear-gradient(135deg, #B8893A 0%, #D4A855 40%, #A87830 100%)' },
       { name: 'Orzech',       css: 'linear-gradient(135deg, #4A2C14 0%, #6B3F24 40%, #3D2010 100%)' },
@@ -103,7 +96,6 @@ export const products = [
       'https://picsum.photos/seed/rw-dn-3/800/600',
     ],
     video: PLACEHOLDER_VIDEO,
-    montaz: MONTAZ_BEZINWAZYJNY,
     colors: [
       { name: 'Biały',        css: '#F0EFE8' },
       { name: 'Złoty Dąb',    css: 'linear-gradient(135deg, #B8893A 0%, #D4A855 40%, #A87830 100%)' },
