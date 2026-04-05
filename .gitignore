@@ -2,7 +2,8 @@ node_modules
 dist
 .DS_Store
 *.local
-.claude/settings.local.json
+.claude/
+CLAUDE.md
 CLAUDE.local.md
 
 # Dev/internal files
