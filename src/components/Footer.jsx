@@ -34,7 +34,7 @@ export default function Footer() {
                 className="h-32 w-auto invert sepia"
               />
             </a>
-            <p className="text-zinc-500 text-sm leading-relaxed mb-6">
+            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
               Producent rolet wewnętrznych na zamówienie. Jakość i styl dla Twojego domu od 2018 roku.
             </p>
             {/* REPLACE: update social links */}
@@ -72,7 +72,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-zinc-500 hover:text-gold text-sm transition-colors duration-200"
+                    className="text-zinc-400 hover:text-gold text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -89,7 +89,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-zinc-500 hover:text-gold text-sm transition-colors duration-200"
+                    className="text-zinc-400 hover:text-gold text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -101,7 +101,7 @@ export default function Footer() {
           {/* Contact snippet */}
           <div>
             <p className="text-zinc-400 text-[10px] uppercase tracking-widest mb-5">Kontakt</p>
-            <address className="not-italic space-y-3 text-sm text-zinc-500">
+            <address className="not-italic space-y-3 text-sm text-zinc-400">
               <p>ul. Szewska 2<br />64-100 Leszno</p>
               <p>
                 <a href="tel:+48508164473" className="hover:text-gold transition-colors">
@@ -113,15 +113,15 @@ export default function Footer() {
                   rollo-max@wp.pl
                 </a>
               </p>
-              <p className="text-zinc-600">Pon–Pt: 8:00–15:00</p>
+              <p>Pon–Pt: 8:00–15:00</p>
             </address>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-zinc-800 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-zinc-600 text-xs">
+        <div className="border-t border-zinc-800 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-zinc-400 text-xs">
           <p>© {year} Rollo-MAX. Wszelkie prawa zastrzeżone.</p>
-          <p className="italic">Zaprojektowane z pasją do detalu.</p>
+          <p>Zaprojektowane i wykonane przez <span className="text-gold">Tobiasz Kita</span></p>
         </div>
       </div>
     </footer>

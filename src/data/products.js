@@ -1,3 +1,8 @@
+export const MONTAZ_BEZINWAZYJNY =
+  'Wszystkie nasze rolety montujemy bezinwazyjnie – bez wiercenia i bez uszkadzania ramy okna. ' +
+  'Używamy specjalnych blaszek nierdzewnych przyklejanych do ramy, które utrzymują roletę pewnie i estetycznie. ' +
+  'Taki montaż jest odwracalny, nie narusza gwarancji okna i sprawdza się zarówno w oknach PCV, drewnianych, jak i aluminiowych.'
+
 export const types = [
   { id: 'all', label: 'Wszystkie' },
   { id: 'wolnowiszace', label: 'Wewnętrzne Wolnowiszące' },

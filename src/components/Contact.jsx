@@ -297,7 +297,7 @@ export default function Contact() {
                   )}
                 </div>
 
-                <p className="text-zinc-600 text-xs">
+                <p className="text-zinc-400 text-xs">
                   Pola oznaczone <span aria-hidden="true">*</span> są wymagane.
                 </p>
 

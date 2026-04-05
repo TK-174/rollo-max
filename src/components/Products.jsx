@@ -40,7 +40,7 @@ function ColorSwatches({ colors }) {
   if (!colors || colors.length === 0) return null
   return (
     <div className="mt-3">
-      <p className="text-zinc-600 text-[10px] uppercase tracking-widest mb-2">Dostępne kolory kasety</p>
+      <p className="text-zinc-400 text-[10px] uppercase tracking-widest mb-2">Dostępne kolory kasety</p>
       <div className="flex flex-wrap gap-2">
         {colors.map((color) => (
           <div key={color.name} className="group/swatch relative">
@@ -343,7 +343,7 @@ function ProductCard({ product, categoryLabel, onOpen, reduceMotion }) {
       {/* Card body */}
       <div className="flex flex-col flex-1 p-5">
         <h3 className="font-serif text-lg text-zinc-100 leading-snug mb-2">{product.title}</h3>
-        <p className="text-zinc-500 text-sm leading-relaxed line-clamp-2">{product.description}</p>
+        <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2">{product.description}</p>
         {/* Swatches + buttons pinned to card bottom */}
         <div className="mt-auto">
           <ColorSwatches colors={product.colors} />
@@ -419,7 +419,7 @@ export default function Products() {
               Oferujemy szeroki wybór rolet wewnętrznych — każdy produkt szyjemy na zamówienie.
               Przeglądaj zdjęcia i filmy prezentacyjne, aby wybrać idealne rozwiązanie dla swojego wnętrza.
             </p>
-            <p className="text-zinc-500 text-[13px] leading-relaxed">
+            <p className="text-zinc-400 text-[13px] leading-relaxed">
               <span className="text-gold font-medium">Trwałe mechanizmy z poliamidu — </span>
               Wszystkie mechanizmy naszych rolet wykonujemy z wysokiej jakości poliamidu (nylonu). Materiał ten charakteryzuje się wyjątkową odpornością na ścieranie, zużycie mechaniczne i długotrwałe użytkowanie, co gwarantuje cichą, płynną pracę rolety przez wiele lat.
             </p>
@@ -468,7 +468,7 @@ export default function Products() {
 
         {/* CTA */}
         <div className="text-center mt-14">
-          <p className="text-zinc-500 text-sm mb-6">
+          <p className="text-zinc-400 text-sm mb-6">
             Nie widzisz tego, czego szukasz? Skontaktuj się — realizujemy niestandardowe zamówienia.
           </p>
           <a href="#kontakt" className="btn-secondary">

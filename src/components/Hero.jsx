@@ -77,7 +77,7 @@ export default function Hero() {
             {...fadeUp(0.2)}
             className="text-zinc-400 text-lg leading-relaxed mb-10 max-w-xl"
           >
-            Projektujemy i produkujemy rolety wewnętrzne na zamówienie. Jakość premium.
+            Projektujemy i produkujemy rolety wewnętrzne na zamówienie.
           </motion.p>
 
           <motion.div
@@ -109,24 +109,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      {!reduceMotion && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          aria-hidden="true"
-        >
-          <span className="text-zinc-600 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
-          <motion.span
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
-            className="block w-px h-10 bg-gradient-to-b from-zinc-500 to-transparent"
-          />
-        </motion.div>
-      )}
     </section>
   )
 }
